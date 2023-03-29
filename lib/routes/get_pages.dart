@@ -1,9 +1,9 @@
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_1_feed_post_screen/bottom_nav_1_feed_post_screen_binding.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_2_search_screen/bottom_nav_2_search_screen_binding.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_3_upload_feed_screen/bottom_nav_3_upload_feed_screen_binding.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_4_reels_screen/bottom_nav_4_reels_screen_binding.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_5_profile_screen/bottom_nav_5_profile_screen_binding.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_1_feed_post_screen/feed_post_screen_binding.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_2_search_screen/search_screen_binding.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_3_upload_feed_screen/upload_feed_screen_binding.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_4_reels_screen/reels_screen_binding.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_5_profile_screen/profile_screen_binding.dart';
 import 'package:instagram_clone/app/presentation/screens/entry_screen/entry_screen.dart';
 import 'package:instagram_clone/app/presentation/screens/entry_screen/entry_screen_binding.dart';
 import 'package:instagram_clone/app/presentation/screens/main_indexed_stack_screen/main_indexed_stack_screen.dart';
@@ -36,11 +36,11 @@ abstract class GetPages {
           page: () => const MainIndexedStackScreen(),
           bindings: [
             MainIndexedStackScreenBinding(),
-            BottomNav1FeedPostScreenBinding(),
-            BottomNav2SearchScreenBinding(),
-            BottomNav3UploadFeedScreenBinding(),
-            BottomNav4ReelsScreenBinding(),
-            BottomNav5ProfileScreenBinding(),
+            FeedPostScreenBinding(),
+            SearchScreenBinding(),
+            UploadFeedScreenBinding(),
+            ReelsScreenBinding(),
+            ProfileScreenBinding(),
           ],
         ),
       ];

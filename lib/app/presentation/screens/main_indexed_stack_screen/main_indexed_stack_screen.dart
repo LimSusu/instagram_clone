@@ -1,11 +1,11 @@
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_1_feed_post_screen/bottom_nav_1_feed_post_screen.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_2_search_screen/bottom_nav_2_search_screen.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_3_upload_feed_screen/bottom_nav_3_upload_feed_screen.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_4_reels_screen/bottom_nav_4_reels_screen.dart';
-import 'package:instagram_clone/app/presentation/screens/bottom_nav_5_profile_screen/bottom_nav_5_profile_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_1_feed_post_screen/feed_post_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_2_search_screen/search_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_3_upload_feed_screen/upload_feed_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_4_reels_screen/reels_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_5_profile_screen/profile_screen.dart';
 
 import 'main_indexed_stack_screen_controller.dart';
 
@@ -19,11 +19,11 @@ class MainIndexedStackScreen extends GetView<MainIndexedStackScreenController> {
         () => IndexedStack(
           index: controller.currentIndex,
           children: const [
-            BottomNav1FeedPostScreen(),
-            BottomNav2SearchScreen(),
-            BottomNav3UploadFeedScreen(),
-            BottomNav4ReelsScreen(),
-            BottomNav5ProfileScreen(),
+            FeedPostScreen(),
+            SearchScreen(),
+            UploadFeedScreen(),
+            ReelsScreen(),
+            ProfileScreen(),
           ],
         ),
       ),
