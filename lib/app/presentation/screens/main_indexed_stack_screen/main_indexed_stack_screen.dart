@@ -1,7 +1,12 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_1_feed_post_screen/bottom_nav_1_feed_post_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_2_search_screen/bottom_nav_2_search_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_3_upload_feed_screen/bottom_nav_3_upload_feed_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_4_reels_screen/bottom_nav_4_reels_screen.dart';
+import 'package:instagram_clone/app/presentation/screens/bottom_nav_5_profile_screen/bottom_nav_5_profile_screen.dart';
 
-// ignore: unused_import
 import 'main_indexed_stack_screen_controller.dart';
 
 class MainIndexedStackScreen extends GetView<MainIndexedStackScreenController> {
@@ -10,13 +15,81 @@ class MainIndexedStackScreen extends GetView<MainIndexedStackScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('main_indexed_stack')
+      body: Obx(
+        () => IndexedStack(
+          index: controller.currentIndex,
+          children: const [
+            BottomNav1FeedPostScreen(),
+            BottomNav2SearchScreen(),
+            BottomNav3UploadFeedScreen(),
+            BottomNav4ReelsScreen(),
+            BottomNav5ProfileScreen(),
+          ],
+        ),
+      ),
+      bottomNavigationBar: _buildBottomNavigationBar(),
+    );
+  }
+
+  Widget _buildBottomNavigationBar() {
+    return SafeArea(
+      child: Container(
+        height: 56,
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.black.withOpacity(0.1),
+              width: 1.0,
+            ),
+          ),
+        ),
+        child: Obx(
+          () => BottomNavigationBar(
+            showUnselectedLabels: false,
+            showSelectedLabels: false,
+            currentIndex: controller.currentIndex,
+            onTap: controller.onTap,
+            backgroundColor: Colors.white,
+            selectedFontSize: 0,
+            unselectedFontSize: 0,
+            type: BottomNavigationBarType.fixed,
+            elevation: 0,
+            items: [
+              BottomNavigationBarItem(
+                icon: controller.currentIndex == 0
+                    ? SvgPicture.asset('assets/icons/home_selected.svg')
+                    : SvgPicture.asset('assets/icons/home.svg'),
+                label: 'home',
+              ),
+              BottomNavigationBarItem(
+                icon: controller.currentIndex == 1
+                    ? SvgPicture.asset('assets/icons/search_selected.svg')
+                    : SvgPicture.asset('assets/icons/search.svg'),
+                label: 'search',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset('assets/icons/add.svg'),
+                label: 'add feed',
+              ),
+              BottomNavigationBarItem(
+                icon: controller.currentIndex == 3
+                    ? SvgPicture.asset('assets/icons/reels_selected.svg')
+                    : SvgPicture.asset('assets/icons/reels.svg'),
+                label: 'reels',
+              ),
+              // TODO: 이후 프로필 사진으로 변경 필요
+              const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                  size: 24,
+                ),
+                label: 'profile',
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
-
-// GetPage(
-//   name: ,
-//   page: () => const MainIndexedStackScreen(),
-//   binding: MainIndexedStackScreenBinding(),
-// )
