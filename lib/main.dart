@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: RouteNames.ENTRY,
       getPages: GetPages.pages,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
