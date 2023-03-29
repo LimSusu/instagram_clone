@@ -10,7 +10,16 @@ class EntryScreen extends GetView<EntryScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('entry')
+      appBar: AppBar(
+        title: const Text('EntryScreen'),
+        elevation: 0,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: controller.onLoginButtonTap,
+          child: Text('로그인'),
+        ),
+      ),
     );
   }
 }
