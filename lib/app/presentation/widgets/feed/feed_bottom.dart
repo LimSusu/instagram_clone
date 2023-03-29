@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PostBottom extends StatelessWidget {
+class FeedBottom extends StatelessWidget {
   final int likeCount;
   final String username;
   final String content;
@@ -9,7 +9,7 @@ class PostBottom extends StatelessWidget {
   final String imageUrl;
   final DateTime createdAt;
 
-  const PostBottom({
+  const FeedBottom({
     Key? key,
     required this.likeCount,
     required this.username,
